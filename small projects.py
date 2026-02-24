@@ -49,4 +49,31 @@ print("\n")
 print("Amount column")
 print(df["Amount"])
 
+# Monthly expense Tracker
+import pandas as pd
+dict={
+    "Categories":["Food","Transport","Food","Entertainment","Transport","Food"],
+    "Amounts":[120,50,200,300,40,100],
+    "Days":[1,1,5,10,12,20]
+}
+columns=["Categories","Amounts","Days"]
+df=pd.DataFrame(dict,columns=columns)
+print(df)
+print("\n")
+print("Only amounts are:")
+print(df["Amounts"])
+print("\n")
+print("Only categories are:")
+print(df["Categories"])
+df["GST"]=df["Amounts"]*0.10
+print("After adding gst column:")
+print(df["GST"])
+print("Total amount")
+print(df["Amounts"].sum())
+print("\n")
+print("Maximum expense is:")
+print(df.loc[df["Amounts"].idxmax()])
+print("\n")
+print("Minimum expenses:")
+print(df.loc[df["Amounts"].idxmin()])
 
