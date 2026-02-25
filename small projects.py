@@ -128,3 +128,28 @@ print("The total prices are:")
 print(df["Total price"])
 print("The person who spent most is:")
 print(df.loc[df["Total price"].idxmax()])
+
+# Cricket Math Statistics
+import pandas as pd
+data={
+    "Player":["Dhoni","virat","Raina","Jadeja","Ruturaj"],
+    "Runs":[23,45,56,78,99],
+    "Balls":[15,23,20,35,85],
+    "Fours":[1,2,5,5,2],
+    "Sixes":[1,2,1,4,2]
+}
+columns=["Player","Runs","Balls","Fours","Sixes"]
+df=pd.DataFrame(data,columns=columns)
+print(df)
+df["Strike Rate"]=(df["Runs"]/df["Balls"])*100
+print("The strike rate is:")
+print(df["Strike Rate"])
+print("Highest score:")
+print(df.loc[df["Runs"].idxmax()])
+print("Best strike rate:")
+print(df.loc[df["Strike Rate"].idxmax()])
+print("Players scored more than 50:")
+print(df["Runs"]>50)
+df["Total boundaries"]=df["Fours"]+df["Sixes"]
+print("Players who hit more than 5 boundaries:")
+print(df[df["Total boundaries"]>5])
