@@ -153,3 +153,30 @@ print(df["Runs"]>50)
 df["Total boundaries"]=df["Fours"]+df["Sixes"]
 print("Players who hit more than 5 boundaries:")
 print(df[df["Total boundaries"]>5])
+
+# Hospital Patient data
+import pandas as pd
+data={
+    "Patient name":["Kashyap","Sushmita","Koustubh","Kalyan"],
+    "Age":[21,19,20,22],
+    "Gender":["Male","Female","Male","Male"],
+    "Disease":["Thypoid","Maleriya","Fever","Ring worm"],
+    "Bill_amount":[25000,34000,20000,56000]
+}
+columns=["Patient name","Age","Gender","Disease","Bill_amount"]
+df=pd.DataFrame(data,columns=columns)
+print(df)
+print("Average bill amount is:")
+df["Average"]=df["Bill_amount"].mean()
+print(df["Average"])
+print("Highest bill disease:")
+print(df.loc[df["Bill_amount"].idxmax()])
+print("Patient above age 50:")
+print(df[df["Age"]>50])
+print("Total patients per disease:")
+print(df.groupby("Disease").size())
+print("Average bill per disease:")
+print(df.groupby("Disease")["Bill_amount"].mean())
+avg_bill=df["Bill_amount"].mean()
+print("Bills above average:")
+print(df[df["Bill_amount"]>avg_bill])
