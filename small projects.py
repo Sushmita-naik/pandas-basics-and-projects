@@ -110,3 +110,21 @@ df["Grade"]=df["Average"].apply(grade)
 print("The grades are:")
 print(df["Grade"]
 
+
+# online order analysis
+import pandas as pd
+data={
+    "Order_ID":[1237,876,453,234,342],
+    "Customer":["Ranjita","Sharadvi","Sanika","Tanu","Shobha"],
+    "Product":["Mobile","Dress","Laptop","Earphones","Washing Machine"],
+    "Quantity":[2,3,1,2,1],
+    "Price":[23000,1200,55000,3000,15000]
+}
+columns=["Order_ID","Customer","Product","Quantity","Price"]
+df=pd.DataFrame(data,columns=columns)
+print(df)
+df["Total price"]=df["Quantity"]*df["Price"]
+print("The total prices are:")
+print(df["Total price"])
+print("The person who spent most is:")
+print(df.loc[df["Total price"].idxmax()])
