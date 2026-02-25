@@ -77,3 +77,36 @@ print("\n")
 print("Minimum expenses:")
 print(df.loc[df["Amounts"].idxmin()])
 
+
+# Student marks per subject
+import pandas as pd
+dict={
+    "Name":["Sushmita","Samruddhi","Sharanya","Nishmitha"],
+    "Maths":[90,99,87,56],
+    "Physics":[56,76,45,33],
+    "Chemistry":[34,21,67,85],
+    "Attendence":[75,98,65,78]
+}
+columns=["Name","Maths","Physics","Chemistry","Attendence"]
+df=pd.DataFrame(dict,columns=columns)
+print(df)
+df["Total Marks"]=df["Maths"]+df["Physics"]+df["Chemistry"]
+print("After adding total marks column:")
+print(df["Total Marks"])
+df["Average"]=df["Total Marks"]/3
+print("After adding average:")
+print(df["Average"])
+def grade(avg):
+    if avg >= 80:
+        return "A"
+    elif avg >=60:
+        return "B"
+    elif avg >=40:
+        return "C"
+    else:
+        return "Fail"
+    
+df["Grade"]=df["Average"].apply(grade)
+print("The grades are:")
+print(df["Grade"]
+
