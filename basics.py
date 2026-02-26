@@ -60,6 +60,20 @@ series={
 var=pd.DataFrame(series)
 print(var)
 
+# dataframe delete and insert function
+# insert function
+import pandas as pd
+var=pd.DataFrame({"a":[1,2,3,4,5],"B":[4,5,6,7,9]})
+print(var)
+var.insert(2,"C++",var["a"])
+print(var)
+var.insert(3,"Sush",var["B"])
+print(var)
+var.insert(0,"An",[10,11,12,13,14])
+print(var)
+var["Sushmita"]=var["a"][:3]
+print(var)
+
 
 
 
