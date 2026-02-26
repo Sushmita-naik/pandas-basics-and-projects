@@ -180,3 +180,39 @@ print(df.groupby("Disease")["Bill_amount"].mean())
 avg_bill=df["Bill_amount"].mean()
 print("Bills above average:")
 print(df[df["Bill_amount"]>avg_bill])
+
+# Employee salary manager
+import pandas as pd
+data={
+    "Emp_ID":[1001,1002,1003,1004],
+    "Name":["Sushmita","Sharanya","Sammu","Nishmi"],
+    "Department":["AIML","CSE","CSE","AIML"],
+    "Salary":[50000,67000,39000,56000]
+
+}
+coulmns=["Emp_ID","Name","Department","Salary"]
+df=pd.DataFrame(data,columns=coulmns)
+print(df)
+print("Bonus is:")
+df["Bonus"]=df["Salary"]*0.10
+print(df["Bonus"])
+print("Net salary after adding bonus:")
+df["Total_salary"]=df["Salary"]+df["Bonus"]
+print(df["Total_salary"])
+print("After inserting Net_salary:")
+df.insert(4,"Net_Salary",df["Total_salary"])
+print(df)
+new_employee={
+    "Emp_ID":1005,
+    "Name":"Ranju",
+    "Department":"ICB",
+    "Salary":65000,
+    "Bonus":4500,
+    "Total_Salary":71500,
+    "Net_Salary":71500
+}
+df.loc[len(df)]=new_employee
+df.pop("Department")
+print(df)
+df=df[df["Salary"]>=30000]
+print(df)
