@@ -74,6 +74,15 @@ print(var)
 var["Sushmita"]=var["a"][:3]
 print(var)
 
+# delete function
+import pandas as pd
+var=pd.DataFrame({"a":[1,2,3,4,5],"B":[4,5,6,7,9],"C":[11,12,13,14,15]})
+print(var)
+var1=var.pop("C")
+print(var1)
+del var["a"]
+print(var)
+
 
 
 
