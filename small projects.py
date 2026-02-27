@@ -216,3 +216,41 @@ df.pop("Department")
 print(df)
 df=df[df["Salary"]>=30000]
 print(df)
+
+# product inventory System
+import pandas as pd
+data={
+    "Product_ID":[101,102,103,104,105],
+    "Product_Name":["TV","Mobile","Laptop","Washing machine","Monitor"],
+    "Stock":[1200,3003,4500,6500,2100],
+    "Price":[30000,24000,73000,15000,40000]
+}
+columns=["Product_ID","Product_Name","Stock","Price"]
+df=pd.DataFrame(data,columns=columns)
+print(df)
+df.insert(4,"Stock_value",df["Stock"]*df["Price"])
+print(df)
+new_product={
+    "Product_ID":106,
+    "Product_Name":"C_pin",
+    "Stock":3500,
+    "Price":45000
+}
+df.loc[len(df)]=new_product
+print(df)
+new_product_2={
+    "Product_ID":107,
+    "Product_Name":"CPU",
+    "Stock":6500,
+    "Price":60000
+}
+df.loc[len(df)]=new_product_2
+print(df)
+df["Stock_value"]=df["Stock"]*df["Price"]
+print(df)
+df=df[df["Stock"]!=0]
+print(df)
+df["Category"]="Electronics"
+print(df)
+df.pop("Product_ID")
+print(df)
