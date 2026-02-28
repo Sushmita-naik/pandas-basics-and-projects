@@ -91,4 +91,9 @@ d=pd.DataFrame(dict)
 print(d)
 d.to_csv("Test_new1.csv",index=False,header=[1,2,3])
 
+# read csv file
+import pandas as pd
+csv_file1=pd.read_csv("C:\\Users\\sushm\\OneDrive\\Desktop\\Pandas\\customers-100.csv")
+print(csv_file1)
+
 
