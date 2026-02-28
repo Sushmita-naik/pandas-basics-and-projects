@@ -84,5 +84,11 @@ del var["a"]
 print(var)
 
 
+# CSV file
+import pandas as pd
+dict={1:[1,2,3,4,5,6],2:[1,2,3,4,5,6],3:[1,2,3,4,5,6]}
+d=pd.DataFrame(dict)
+print(d)
+d.to_csv("Test_new1.csv",index=False,header=[1,2,3])
 
 
