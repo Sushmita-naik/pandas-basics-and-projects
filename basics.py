@@ -96,4 +96,41 @@ import pandas as pd
 csv_file1=pd.read_csv("C:\\Users\\sushm\\OneDrive\\Desktop\\Pandas\\customers-100.csv")
 print(csv_file1)
 
+# to get the rows
+csv_file1=pd.read_csv("C:\\Users\\sushm\\OneDrive\\Desktop\\Pandas\\Sale Report.csv",nrows=6)
+print(csv_file1)
+print(type(csv_file1))
 
+# to get the colums 
+csv_file1=pd.read_csv("C:\\Users\\sushm\\OneDrive\\Desktop\\Pandas\\Sale Report.csv",usecols=["SKU Code","Design No.","Category"])
+print(csv_file1)
+
+# to get the column using method2 
+csv_file1=pd.read_csv("C:\\Users\\sushm\\OneDrive\\Desktop\\Pandas\\Sale Report.csv",usecols=[0,1,2])
+print(csv_file1)
+
+# to skip the rows
+csv_file1=pd.read_csv("C:\\Users\\sushm\\OneDrive\\Desktop\\Pandas\\Sale Report.csv",skiprows=[0,1,2,3,4,5])
+print(csv_file1)
+
+# to change the index 
+csv_file1=pd.read_csv("C:\\Users\\sushm\\OneDrive\\Desktop\\Pandas\\Sale Report.csv",index_col="SKU Code")
+print(csv_file1)
+
+# To change the header 
+csv_file1=pd.read_csv("C:\\Users\\sushm\\OneDrive\\Desktop\\Pandas\\Sale Report.csv",header=2)
+print(csv_file1)
+
+# to change the header method2
+csv_file1=pd.read_csv("C:\\Users\\sushm\\OneDrive\\Desktop\\Pandas\\Sale Report.csv",names=["colm1","colm2","com3","colm4,colm5,colm6,colm7"])
+print(csv_file1)
+
+# to change the header method3
+csv_file1=pd.read_csv("C:\\Users\\sushm\\OneDrive\\Desktop\\Pandas\\Sale Report.csv",header=None)
+csv_file1.columns=["Colm1","Colm2","Colm3","Colm4","Colm5","Colm6","Colm7"]
+print(csv_file1)
+
+# to change the datatype of datas
+import pandas as pd
+csv_file1=pd.read_csv("C:\\Users\\sushm\\OneDrive\\Desktop\\Pandas\\Sale Report.csv",dtype={"Colm4":int})
+print(csv_file1)
