@@ -254,3 +254,23 @@ df["Category"]="Electronics"
 print(df)
 df.pop("Product_ID")
 print(df)
+
+# projects on csv files
+# sales report
+import pandas as pd
+dict={"Order_ID":[101,102,103,104,105],"Product":["Laptop","Mouse","Chair","Table","Mobile"],"Category":["Electronics","Electronics","Furniture","Furniture","Electronics"],"Quantity":[2,5,3,1,4],"Price":[75000,500,4500,12000,25000]}
+d=pd.DataFrame(dict)
+print(d)
+# d.to_csv("Test_new1.csv")
+print()
+d=pd.read_csv("C:\\Users\\sushm\\OneDrive\\Desktop\\Pandas\\Test_new1.csv")
+print(d)
+d["Total_sale"]=d["Quantity"]*d["Price"]
+print(d)
+Electronics=d[d["Category"]=="Electronics"]
+print(Electronics)
+total_revenue=d["Total_sale"].sum()
+print("Total revenue is:",total_revenue)
+d=d[d["Quantity"] >=2]
+print(d)
+d.to_csv("Upadated_sales.csv",index=False)
