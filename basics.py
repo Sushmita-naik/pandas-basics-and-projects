@@ -165,3 +165,28 @@ csv_fil.to_numpy
 import numpy as np
 v=np.asarray(csv_fil)
 print(v)
+
+# to print datasets in ascending or discending order
+csv_fil.sort_index(axis=0,ascending=True)
+
+csv_fil.sort_index(axis=0,ascending=False)
+
+# to change the column name 
+csv_fil.loc[0,"Category"]="Pants"
+csv_fil
+
+# to get the datas that randomly that means 
+csv_fil.loc[[2,3],["Sku","Category"]]
+csv_fil.loc[[2,3],["Sku","Style Id"]]
+
+# to get the whole datas of the particular column then
+csv_fil.loc[:,["Sku","Style Id"]]
+
+# to get the all row values or datas then use
+csv_fil.loc[[2,3],:]
+
+# using of iloc function
+csv_fil.iloc[2,5]
+
+# drop function to drop the row and column
+csv_fil.drop("Category",axis=1)
