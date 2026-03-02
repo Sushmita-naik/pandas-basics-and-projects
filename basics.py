@@ -134,3 +134,34 @@ print(csv_file1)
 import pandas as pd
 csv_file1=pd.read_csv("C:\\Users\\sushm\\OneDrive\\Desktop\\Pandas\\Sale Report.csv",dtype={"Colm4":int})
 print(csv_file1)
+
+# pandas functions
+import pandas as pd
+csv_fil=pd.read_csv("C:\\Users\\sushm\\OneDrive\\Desktop\\Pandas\\May-2022.csv")
+print(csv_fil)
+# to get the index number
+csv_fil.index
+# to get the column
+csv_fil.columns
+# to describe that means which are all the operations done there that
+csv_fil.describe
+# head function will define the first 5 values of the datasets that is
+csv_fil.head(3) # pass how many values or data you want like 3 or 2 whatever
+# using of tail function it will give the last 5 values
+csv_fil.tail(4)
+
+# slicing of csv files
+csv_fil[:3]
+
+print(type(csv_fil))
+
+# to get the array index value
+csv_fil.index.array
+
+# to convert into numpy array
+csv_fil.to_numpy
+
+# type 2 of converting numpy arrays
+import numpy as np
+v=np.asarray(csv_fil)
+print(v)
