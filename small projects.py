@@ -274,3 +274,23 @@ print("Total revenue is:",total_revenue)
 d=d[d["Quantity"] >=2]
 print(d)
 d.to_csv("Upadated_sales.csv",index=False)
+
+
+import pandas as pd
+data={
+    "Roll_no":[1,2,3,4,5],
+    "Name":["Aman","Riya","John","Sara","Arjun"],
+    "Maths":[78,45,88,30,95],
+    "Science":[85,67,89,34,23],
+    "English":[76,56,87,45,58]
+}
+d=pd.DataFrame(data)
+print(d)
+print(d.head(3))
+d_sorted=d.sort_values(by="Maths",ascending=False)
+print(d_sorted)
+high_maths=d[d["Maths"]>80]
+print(high_maths)
+d=d.drop("English",axis=1)
+print(d)
+d.to_csv("Updated_students.csv",index=False)
