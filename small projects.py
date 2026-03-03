@@ -344,3 +344,15 @@ thalach_rows=d[d["thalach"]>150]
 print("The thalach rows greator than 150 are:\n",thalach_rows)
 d=d.drop("chol",axis=1)
 print("After dropping chol column:\n",d)
+
+import pandas as pd
+d=pd.read_csv("C:\\Users\\sushm\\OneDrive\\Desktop\\Pandas\\Mall_customers.csv")
+print(d)
+customer_age=d[d["Age"]>40]
+print("The customer with age greator than 40 is:\n",customer_age)
+female_customer=d[d["Gender"]=="Female"]
+print("The female customers are:\n",female_customer)
+spending_score=d.sort_values(by="Spending Score (1-100)",ascending=False)
+print("The spending score after printing in descending:\n",spending_score)
+income=d[d["Annual Income (k$)"]>70]
+print("The income with greator than 70 are:\n",income)
