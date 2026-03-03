@@ -294,3 +294,25 @@ print(high_maths)
 d=d.drop("English",axis=1)
 print(d)
 d.to_csv("Updated_students.csv",index=False)
+
+# Student admission record
+import pandas as pd
+data={
+    "Student_ID":[1,2,3,4,5,6],
+    "Name":["Aman","Riya","John","Sara","Arjun","Neha"],
+     "Marks":[78,85,92,60,88,55],
+     "Departments":["CSE","ECE","CSE","ME","CSE","ECE"],
+     "City":["Manglore","Banglore","Mysore","Manglore","Banglore","Mysore"]
+}
+df=pd.DataFrame(data)
+print(df)
+print(df.head(4))
+print(df[df["Departments"]=="CSE"])
+print(df[df["City"]=="Banglore"])
+df_sorted=df.sort_values(by="Marks",ascending=False)
+print(df_sorted)
+marks=df[df["Marks"]>80]
+print(marks)
+df=df.drop("City",axis=1)
+print(df)
+df.to_csv("Updated csv is",index=False)
