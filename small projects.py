@@ -329,3 +329,18 @@ high_life=Albenia[Albenia["life_exp"] > 70]
 print(high_life)
 Albenia=Albenia.drop("year",axis=1)
 print(Albenia)
+
+# heart disease datasets
+import pandas as pd
+d=pd.read_csv("C:\\Users\\sushm\\OneDrive\\Desktop\\Pandas\\heart_Disease.csv")
+print(d)
+patients_age=d[d["age"]>50]
+print("The patients age greator than 50 are:\n",patients_age)
+patients_target=d[d["target"]==1]
+print("The patients with target 1 is:\n",patients_target)
+chol_sorted=d.sort_values(by="chol",ascending=False)
+print(chol_sorted)
+thalach_rows=d[d["thalach"]>150]
+print("The thalach rows greator than 150 are:\n",thalach_rows)
+d=d.drop("chol",axis=1)
+print("After dropping chol column:\n",d)
