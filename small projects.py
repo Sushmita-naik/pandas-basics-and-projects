@@ -316,3 +316,16 @@ print(marks)
 df=df.drop("City",axis=1)
 print(df)
 df.to_csv("Updated csv is",index=False)
+
+# gapminder datsets
+import pandas as pd
+df=pd.read_csv("C:\\Users\\sushm\\OneDrive\\Desktop\\Pandas\\gapminder.csv")
+print(df)
+Albenia=df[df["country"]=="Albania"]
+print("The countries with albenia are:\n",Albenia)
+Albenia_sort=Albenia.sort_values(by="year")
+print(Albenia_sort)
+high_life=Albenia[Albenia["life_exp"] > 70]
+print(high_life)
+Albenia=Albenia.drop("year",axis=1)
+print(Albenia)
