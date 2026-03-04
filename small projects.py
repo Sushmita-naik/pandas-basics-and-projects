@@ -356,3 +356,4 @@ spending_score=d.sort_values(by="Spending Score (1-100)",ascending=False)
 print("The spending score after printing in descending:\n",spending_score)
 income=d[d["Annual Income (k$)"]>70]
 print("The income with greator than 70 are:\n",income)
+
